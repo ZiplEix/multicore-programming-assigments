@@ -8,7 +8,8 @@
 
 ## Results
 
-All the resuts diplay here are the average of 10 runs to find the number of prime numbers in the range of 1 to 200000.
+All the resuts diplay here are the average of 10 runs to to multiply two matrices of size 1000x1000.
+The matrices are always initialized with the same values to ensure that the results are the same, you can find them in the `mat/mat1000.txt` file.
 
 For better understanding on how the code tests are runs, please refer to the [`src/BenchmarkMatmult.java`](src/BenchmarkMatmult.java) file.
 
