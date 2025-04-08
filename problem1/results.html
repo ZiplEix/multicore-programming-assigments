@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>results</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="custom.css" />
+</head>
+<body>
+<h1 id="problem-1-results">Problem 1 Results</h1>
+<h2 id="environment">Environment</h2>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 12%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+<col style="width: 11%" />
+<col style="width: 4%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>CPU Type</th>
+<th>CPU Model</th>
+<th>Number of Cores</th>
+<th>CPU Frequency</th>
+<th>RAM Size</th>
+<th>OS</th>
+<th>Runtime Environment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AMD Razen</td>
+<td>AMD Ryzen 7 5800H</td>
+<td>8</td>
+<td>3.2 GHz</td>
+<td>16 GB</td>
+<td>Windows 11 -&gt; WSL2 -&gt; Ubuntu 24.04.2</td>
+<td>Docker openjdk:17-jdk-slim</td>
+</tr>
+</tbody>
+</table>
+<h2 id="results">Results</h2>
+<p>All the resuts diplay here are the average of 10 runs to find the
+number of prime numbers in the range of 1 to 200000.</p>
+<p>For better understanding on how the code tests are runs, please refer
+to the <a
+href="../src/BenchmarkRunner.java"><code>src/BenchmarkRunner.java</code></a>
+file.</p>
+<p>All the times are in milliseconds.</p>
+<h3 id="execution-time">Execution Time</h3>
+<p>pc_serial : 5117 ms</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Thread number</th>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+<th>6</th>
+<th>8</th>
+<th>10</th>
+<th>12</th>
+<th>14</th>
+<th>16</th>
+<th>32</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>static (block)</td>
+<td>5824</td>
+<td>4566</td>
+<td>3023</td>
+<td>2196</td>
+<td>1787</td>
+<td>1693</td>
+<td>1391</td>
+<td>1209</td>
+<td>1176</td>
+<td>1005</td>
+</tr>
+<tr class="even">
+<td>static (cyclic) [task size : 10]</td>
+<td>5903</td>
+<td>3419</td>
+<td>2092</td>
+<td>1996</td>
+<td>1264</td>
+<td>1112</td>
+<td>1187</td>
+<td>937</td>
+<td>908</td>
+<td>893</td>
+</tr>
+<tr class="odd">
+<td>dynamic [task size : 10]</td>
+<td>5833</td>
+<td>3418</td>
+<td>1945</td>
+<td>1443</td>
+<td>1221</td>
+<td>1024</td>
+<td>811</td>
+<td>817</td>
+<td>820</td>
+<td>900</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="./media/exec_time.png" alt="exec time graph" />
+<figcaption aria-hidden="true">exec time graph</figcaption>
+</figure>
+<h3 id="performance">Performance</h3>
+<p>For better readability, the value for the performance is calculated
+using the execution time in seconds.</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Thread number</th>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+<th>6</th>
+<th>8</th>
+<th>10</th>
+<th>12</th>
+<th>14</th>
+<th>16</th>
+<th>32</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>static (block)</td>
+<td>0.172</td>
+<td>0.219</td>
+<td>0.331</td>
+<td>0.455</td>
+<td>0.560</td>
+<td>0.591</td>
+<td>0.719</td>
+<td>0.827</td>
+<td>0.850</td>
+<td>0.995</td>
+</tr>
+<tr class="even">
+<td>static (cyclic) [task size : 10]</td>
+<td>0.169</td>
+<td>0.292</td>
+<td>0.478</td>
+<td>0.501</td>
+<td>0.791</td>
+<td>0.899</td>
+<td>0.842</td>
+<td>1.067</td>
+<td>1.101</td>
+<td>1.120</td>
+</tr>
+<tr class="odd">
+<td>dynamic [task size : 10]</td>
+<td>0.171</td>
+<td>0.293</td>
+<td>0.514</td>
+<td>0.693</td>
+<td>0.819</td>
+<td>0.977</td>
+<td>1.233</td>
+<td>1.224</td>
+<td>1.220</td>
+<td>1.111</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="./media/performance.png" alt="performance graph" />
+<figcaption aria-hidden="true">performance graph</figcaption>
+</figure>
+<h2 id="results-analysis">Results Analysis</h2>
+<p>The serial version (<code>pc_serial</code>) completes in
+approximately 5117 ms, which serves as the baseline for comparing the
+parallel implementations.</p>
+<p>All parallel implementations outperform the serial version when
+multiple threads are used. Execution time generally decreases as the
+number of threads increases, although the rate of improvement diminishes
+past a certain point.</p>
+<ul>
+<li>The static (block) strategy shows consistent improvements, but
+scales less efficiently beyond 12 threads.</li>
+<li>The static (cyclic) and dynamic strategies achieve better
+scalability, particularly when using more than 8 threads.</li>
+<li>The dynamic scheduling consistently outperforms the other strategies
+at high thread counts (12–16 threads), likely due to better load
+balancing.</li>
+</ul>
+<p>When visualized as performance, the dynamic strategy exhibits the
+best results overall, reaching over 1.2 (1/ms) at 12–16 threads.</p>
+<ul>
+<li>The static (cyclic) strategy closely follows, especially at 14–32
+threads, indicating it also benefits from fine-grained task
+distribution.</li>
+<li>Static (block) performance grows steadily, but doesn’t reach the
+same levels as the other two, likely due to load imbalance in uneven
+workloads.</li>
+</ul>
+<p>At 32 threads, all strategies plateau or slightly drop in
+performance. This suggests the workload becomes too fragmented, or
+overheads such as synchronization and task dispatching begin to outweigh
+the benefits of additional threads — a common occurrence in CPU-bound
+tasks when the number of threads exceeds the number of physical
+cores.</p>
+<ul>
+<li>The static (block) strategy, while initially promising, shows
+diminishing returns at higher thread counts, indicating that its
+fixed-size task allocation may not be optimal for all scenarios.</li>
+<li>The static (cyclic) and dynamic strategies, while still effective,
+also show signs of diminishing returns, suggesting that the overhead of
+managing many threads can negate the benefits of parallelism.</li>
+<li>The dynamic strategy, while still the best performer, also shows
+signs of diminishing returns, suggesting that the overhead of managing
+many threads can negate the benefits of parallelism.</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<h3 id="docker">Docker</h3>
+<p>If you don’t have Java installed on your machine, you can use the
+Docker image provided in the <code>Dockerfile</code> to run the code.
+The Docker image is based on <code>openjdk:17-jdk-slim</code>, which is
+a lightweight version of the OpenJDK 17 JDK.</p>
+<p>to build and run the image, you can use the Makefile provided in the
+root directory of the project. The Makefile contains the following
+targets: - <code>all</code>: call the run target. - <code>build</code>:
+Builds the Docker image. - <code>run</code>: Runs the Docker container
+and executes bash.</p>
+<p>The image will provide a Java environment and a shell prompt where
+you can run the Java code.</p>
+<h3 id="benchmarking">Benchmarking</h3>
+<p>The benchmarking is done using the BenchmarkRunner class, which is a
+simple Java program that runs the différents programme and compile the
+results on a json file.</p>
+<h3 id="data-visualization">Data Visualization</h3>
+<p>The data visualization is done using the Python libraries
+<code>matplotlib</code> to generate the graphs. The tables are generated
+using simple markdown tables. The graphs are saved in the
+<code>media</code> directory, and the tables are included in this
+markdown file.</p>
+<p>The script will read the <code>results.json</code> file generated by
+the BenchmarkRunner class and generate the graphs and tables based on
+the data in the file.</p>
+<p>To generate the execution time graph and table, run the following
+command:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> generate_tab.py</span></code></pre></div>
+<p>This will display the table in the standart output and sage the png
+of the graph in the <code>media</code> directory.</p>
+<p>To generate the performance graph and table, run the following
+command:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> generate_tab.py <span class="at">--perf</span></span></code></pre></div>
+<p>The will display the table in the standart output and sage the png of
+the graph in the <code>media</code> directory.</p>
+</body>
+</html>
