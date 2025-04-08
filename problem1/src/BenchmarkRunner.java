@@ -16,7 +16,7 @@ public class BenchmarkRunner {
         Map<String, Map<Integer, Long>> results = new LinkedHashMap<>();
 
         for (String program : PROGRAMS) {
-            System.out.println("Compiling " + program + ".java...");  // ✅ Correction ici
+            System.out.println("Compiling " + program + ".java...");
             Process compile = new ProcessBuilder("javac", program + ".java").inheritIO().start();
             int status = compile.waitFor();
             if (status != 0) {
@@ -31,8 +31,7 @@ public class BenchmarkRunner {
             for (int threads : THREAD_COUNTS) {
                 if (program.equals("pc_serial") && threads != 1) continue;
 
-                long totalTime = 0;
-                int validRuns = 0;
+                List<Long> validTimes = new ArrayList<>();
 
                 for (int i = 0; i < 10; i++) {
                     List<String> command = new ArrayList<>();
@@ -63,18 +62,41 @@ public class BenchmarkRunner {
                         String[] parts = lastLine.split("\\s+");
                         String timeStr = parts[parts.length - 1].replace("ms", "");
                         long timeMs = Long.parseLong(timeStr);
-                        totalTime += timeMs;
-                        validRuns++;
+
+                        if (timeMs >= 0) {
+                            validTimes.add(timeMs);
+                        } else {
+                            System.err.println("⛔ Ignored negative time (" + timeMs + "ms) from " + program + " with " + threads + " threads (run " + (i + 1) + ").");
+                        }
                     } else {
-                        System.err.println("No valid time output from " + program + " with " + threads + " threads (run " + (i + 1) + ").");
+                        System.err.println("⚠️ No valid time output from " + program + " with " + threads + " threads (run " + (i + 1) + ").");
                     }
                 }
 
-                if (validRuns > 0) {
-                    long averageTime = totalTime / validRuns;
-                    programResults.put(threads, averageTime);
+                // Première moyenne brute
+                if (!validTimes.isEmpty()) {
+                    double average = validTimes.stream().mapToLong(Long::longValue).average().orElse(0);
+
+                    // Filtrage à ±20%
+                    double maxAllowed = average * 1.2;
+
+                    List<Long> filteredTimes = new ArrayList<>();
+                    for (long time : validTimes) {
+                        if (time <= maxAllowed) {
+                            filteredTimes.add(time);
+                        } else {
+                            System.err.println("🚫 Excluded outlier time: " + time + "ms (outside ±20% of avg " + (long)average + "ms)");
+                        }
+                    }
+
+                    if (!filteredTimes.isEmpty()) {
+                        long filteredAvg = (long) filteredTimes.stream().mapToLong(Long::longValue).average().orElse(0);
+                        programResults.put(threads, filteredAvg);
+                    } else {
+                        System.err.println("❌ All runs excluded after filtering for " + program + " with " + threads + " threads.");
+                    }
                 } else {
-                    System.err.println("⚠️  No valid runs for " + program + " with " + threads + " threads.");
+                    System.err.println("❌ No valid runs for " + program + " with " + threads + " threads.");
                 }
             }
 
