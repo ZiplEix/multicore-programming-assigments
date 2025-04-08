@@ -92,7 +92,7 @@ public class BenchmarkMatmult {
         System.out.println("\n=== MatmultD Benchmark Results ===");
         System.out.println(json.toString());
 
-        try (FileWriter writer = new FileWriter("../matmult_results.json")) {
+        try (FileWriter writer = new FileWriter("../results.json")) {
             writer.write(json.toString());
         } catch (IOException e) {
             System.err.println("Error writing to file: " + e.getMessage());
