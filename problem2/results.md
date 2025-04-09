@@ -21,7 +21,7 @@ Provided Matmult : 6899 m
 
 | Thread number | 1 | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 32 |
 |---------------|----|----|----|----|----|----|----|----|----|----|
-| MatmultD | 6232 | 3275 | 1841 | 1210 | 1012 | 842 | 896 | 811 | 848 | 796 |
+| MatmultD | 5572 | 2808 | 1488 | 1082 | 873 | 750 | 649 | 607 | 621 | 606 |
 
 ![exec time graph](./media/exec_time.png)
 
@@ -31,7 +31,7 @@ For better readability, the value for the performance is calculated using the ex
 
 | Thread number | 1 | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 32 |
 |---------------|----|----|----|----|----|----|----|----|----|----|
-| MatmultD | 0.160 | 0.305 | 0.543 | 0.826 | 0.988 | 1.188 | 1.116 | 1.233 | 1.179 | 1.256 |
+| MatmultD | 0.179 | 0.356 | 0.672 | 0.924 | 1.145 | 1.333 | 1.541 | 1.647 | 1.610 | 1.650 |
 
 ![performance graph](./media/performance.png)
 
