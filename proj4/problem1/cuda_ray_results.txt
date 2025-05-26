@@ -1,0 +1,2 @@
+CUDA ray tracing: 0.001 sec
+[result.ppm] was generated.
